@@ -2,11 +2,11 @@ import React from "react";
 import TimeTrack from "./Renders/TimeTrack";
 import RenderWeek from "./Renders/RenderWeek";
 
-const CalendarSheet = () => {
+const CalendarSheet = ({date, getMonday}) => {
   return (
     <main className="days">
       <TimeTrack />
-      <RenderWeek />
+      <RenderWeek date={date} getMonday={getMonday}/>
     </main>
   );
 };

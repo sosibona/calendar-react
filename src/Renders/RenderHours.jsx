@@ -1,23 +1,11 @@
-import React from 'react';
-
-const renderArray = (from, to) => {
-  const newList = [];
-  for (let i = from; i <= to; i++) {
-    newList.push(i);
-  }
-  return newList;
-};
+import React from "react";
+import generateNumbers from "../generateNumbers";
 
 const RenderHours = () => {
-  const hours = renderArray(1,24).map(hour => {
-    return (
-      <div className="row-hour" data-hour={hour}></div>
-    )
-  })
-  console.log(hours)
-  return (
-    {hours}
-  )
-}
+  const hours = generateNumbers(1, 24).map((hour) => {
+    return <div className="row-hour" data-hour={hour}></div>;
+  });
+  return { hours };
+};
 
 export default RenderHours;

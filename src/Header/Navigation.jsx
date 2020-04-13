@@ -3,11 +3,12 @@ import RenderDaysOfWeek from '../Renders/RenderDaysOfWeek'
 import GreenwichZone from "../GreenwichZone";
 import RenderDate from "../Renders/RenderDate";
 
-const Navigation = () => {
+const Navigation = ({date}) => {
+  
   return (
     <nav className="navigation">
       <RenderDaysOfWeek />
-      <RenderDate />
+      <RenderDate date={date}/>
       <GreenwichZone />
     </nav>
   );

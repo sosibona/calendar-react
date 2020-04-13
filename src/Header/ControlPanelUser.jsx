@@ -1,6 +1,7 @@
 import React from "react";
+import ShowMonth from "./ShowMonth";
 
-const ControlPanelUser = () => {
+const ControlPanelUser = ({ nextWeek, prevWeek, onToday, date}) => {
   return (
     <>
       <button className="button header__create">
@@ -13,14 +14,14 @@ const ControlPanelUser = () => {
         </svg>
         Create
       </button>
-      <button className="button header__today">Today</button>
-      <span>
+      <button className="button header__today" onClick={onToday}>Today</button>
+      <button className="change-week-btn" onClick={prevWeek}>
         <i className="header__angle fas fa-angle-left angle-left"></i>
-      </span>
-      <span>
+      </button>
+      <button className="change-week-btn" onClick={nextWeek}>
         <i className="header__angle fas fa-angle-right angle-rigth"></i>
-      </span>
-      <span className="header__month"></span>
+      </button>
+      <ShowMonth date={date}/>
     </>
   );
 };

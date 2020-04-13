@@ -1,28 +1,22 @@
-import React from "react";
+import React, { PureComponent } from "react";
+import generateNumbers from "../generateNumbers";
 
-const renderArray = (from, to) => {
-  const newList = [];
-  for (let i = from; i <= to; i++) {
-    newList.push(i);
-  }
-  return newList;
-};
-
-const TimeTrack = () => {
-  const hoursByDay = renderArray(1, 24);
-  console.log(hoursByDay);
-  const hoursList = hoursByDay.map((hour) => {
+class TimeTrack extends PureComponent {
+  render() {
+    const hoursByDay = generateNumbers(1, 24);
+    const hoursList = hoursByDay.map((hour) => {
+      return (
+        <li className="time-in-day" key={hour}>
+          {hour.toString().length === 1 ? `0${hour}:00` : `${hour}:00`}
+        </li>
+      );
+    });
     return (
-      <li className="time-in-day" key={hour}>
-        {hour.toString().length === 1 ? `0${hour}:00` : `${hour}:00`}
-      </li>
+      <aside>
+        <ul className="time">{hoursList}</ul>
+      </aside>
     );
-  });
-  return (
-    <aside>
-      <ul className="time">{hoursList}</ul>
-    </aside>
-  );
-};
+  }
+}
 
 export default TimeTrack;

@@ -1,20 +1,27 @@
-import React from 'react';
+import React from "react";
+import moment from "moment";
+import getMonday from "../getMonday";
+import generateNumbers from "../generateNumbers";
 
-const renderArray = (from, to) => {
-  const newList = [];
-  for (let i = from; i <= to; i++) {
-    newList.push(i);
-  }
-  return newList;
+const RenderDate = ({ date }) => {
+  const oneDay = 86400000;
+  const mondayDate = getMonday(date);
+  const currentDateTimestamp = new Date(
+    moment(mondayDate).format("L")
+  ).getTime();
+
+  const days = generateNumbers(0, 6).map((day) => {
+    return currentDateTimestamp + day * oneDay;
+  });
+
+  const dateList = days.map((day) => {
+    return (
+      <span key={day} className="curent-date-of-week">
+        {new Date(day).getDate()}
+      </span>
+    );
+  });
+  return <div className="date-of-month">{dateList}</div>;
 };
-
-const RenderDate = () => {
-  const dateList = renderArray(1, 7).map(date => {
-  return <span key={date} className="curent-date-of-week">{date}</span>
-  })
-  return (
-  <div className="date-of-month">{dateList}</div>
-  )
-}
 
 export default RenderDate;

@@ -1,22 +1,11 @@
 import React from "react";
-import moment from "moment";
 import RenderDay from "./RenderDay";
+import generateWeek from "../generateWeek";
 
-const renderArray = (from, to) => {
-  const newList = [];
-  for (let i = from; i <= to; i++) {
-    newList.push(i);
-  }
-  return newList;
-};
 
-const RenderWeek = () => {
-  const currentDateTimestamp = new Date(moment(new Date()).format("L")).getTime();
-  const oneDay = 86400000;
-  const days = renderArray(0, 6).map((day) => {
-    return currentDateTimestamp + day * oneDay;
-  });
-  const weekList = days.map((day) => (
+const RenderWeek = ({date}) => {
+  const week =  generateWeek(date)
+  const weekList = week.map((day) => (
     <RenderDay key={day} dayOfWeek={day} />
   ));
 
