@@ -7,6 +7,7 @@ import CalendarSheet from "./CalendarSheet";
 class Calendar extends Component {
   state = {
     date: new Date(),
+    isModalOpen: false,
   };
 
   nextWeek = () => {
@@ -23,22 +24,38 @@ class Calendar extends Component {
 
   onToday = () => {
     this.setState({
-      date: new Date()
-    })
-  }
+      date: new Date(),
+    });
+  };
+
+  onModalOpen = () => {
+    this.setState({
+      isModalOpen: true,
+    });
+  };
+
+  onModalClose = () => {
+    this.setState({
+      isModalOpen: false,
+    });
+  };
 
   render() {
     return (
       <div className="calendar">
         <DeleteEvent />
-        <AddEvent />
+        <AddEvent
+          isModalOpen={this.state.isModalOpen}
+          onModalClose={this.onModalClose}
+        />
         <Header
           date={this.state.date}
           nextWeek={this.nextWeek}
           prevWeek={this.prevWeek}
           onToday={this.onToday}
+          onModalOpen={this.onModalOpen}
         />
-        <CalendarSheet date={this.state.date}/>
+        <CalendarSheet date={this.state.date} />
       </div>
     );
   }

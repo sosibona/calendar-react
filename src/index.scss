@@ -14,6 +14,7 @@
   box-shadow: 1px 1px 1px 0px rgba(12, 124, 122, 0.5);
   font-weight: 700;
   color: #999;
+  outline: none;
 }
 
 .event{
@@ -87,7 +88,6 @@
   left: calc(50% - 200px);
   border-radius: 8px;
   box-shadow: 10px 10px 40px 10px rgba(12, 124, 122, 0.4);
-  display: none;
 
   &__error {
     width: 320px;
@@ -105,6 +105,9 @@
     margin-right: 10px;
     margin-top: 10px;
     cursor: pointer;
+    background-color: transparent;
+    border: none;
+    outline: none;
   }
 }
 
@@ -184,6 +187,7 @@
     color: #fff;
     border-radius: 6px;
     cursor: pointer;
+    outline: none;
   }
 }
 
@@ -508,4 +512,5 @@
 .change-week-btn {
   border: none;
   background-color: transparent;
+  outline: none;
 }

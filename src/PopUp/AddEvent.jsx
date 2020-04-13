@@ -1,11 +1,12 @@
 import React from "react";
 
-const AddEvent = () => {
+const AddEvent = ({isModalOpen, onModalClose}) => {
+  if (!isModalOpen) return null;
   return (
     <div className="modal-form">
-      <span className="modal-form__icon-close">
+      <button className="modal-form__icon-close" onClick={onModalClose}>
         <i className="far fa-times-circle"></i>
-      </span>
+      </button>
       <span className="modal-form__error"></span>
       <form className="create-event">
         <input
