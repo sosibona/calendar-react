@@ -15,8 +15,17 @@ const RenderDate = ({ date }) => {
   });
 
   const dateList = days.map((day) => {
+    const today = new Date(moment(new Date()).format("L")).getTime();
+    console.log(day);
     return (
-      <span key={day} className="curent-date-of-week">
+      <span
+        key={day}
+        className={
+          today === day
+            ? "curent-date-of-week date-today"
+            : "curent-date-of-week"
+        }
+      >
         {new Date(day).getDate()}
       </span>
     );
