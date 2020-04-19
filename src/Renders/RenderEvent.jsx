@@ -12,10 +12,10 @@ const RenderEvent = ({ events, onDeleteModalOpen }) => {
         style={style}
         onClick={(event) => onDeleteModalOpen(event, meet)}
       >
+        <span>{meet.name}</span>
         <span>
           {meet.eventTime[0]} - {meet.eventTime[1]}
         </span>
-        <span>{meet.name}</span>
         <span className="event__description">{meet.additionalInfo}</span>
       </div>
     );
