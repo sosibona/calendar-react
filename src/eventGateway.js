@@ -10,15 +10,15 @@ export const fetchEventsList = () => {
     .then(eventsList => eventsList)
 }
 
-export const fetchEvents = () => {
-  return fetch(baseUrl)
-    .then((response) => response.json())
-    .then((events) =>
-      this.setState({
-        events: events,
-      })
-    );
-};
+// export const fetchEvents = () => {
+//   return fetch(baseUrl)
+//     .then((response) => response.json())
+//     .then((events) =>
+//       this.setState({
+//         events: events,
+//       })
+//     );
+// };
 
 export const deleteEvent = (id) => {
   return fetch(`${baseUrl}/${id}`, {
@@ -26,7 +26,7 @@ export const deleteEvent = (id) => {
   })
     .then(response => {
       if (!response.ok) {
-        throw new Error('Failed to delete task');
+        throw new Error('Failed to delete event');
       }
     })
 }
@@ -41,7 +41,7 @@ export const createEvent = newEvent => {
   })
     .then((response) => {
       if (!response.ok) {
-        throw new Error("Faild to create task");
+        throw new Error("Faild to create event");
       }
     });
 }
