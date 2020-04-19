@@ -2,7 +2,7 @@ import React from "react";
 import ControlPanelUser from "./ControlPanelUser";
 import Setting from "./Setting";
 
-const UserPanel = ({ nextWeek, prevWeek, onToday, date, onModalOpen }) => {
+const UserPanel = ({ nextWeek, prevWeek, onToday, date, onCreateModalOpen }) => {
   return (
     <div className="header__top-info">
       <ControlPanelUser
@@ -10,7 +10,7 @@ const UserPanel = ({ nextWeek, prevWeek, onToday, date, onModalOpen }) => {
         prevWeek={prevWeek}
         onToday={onToday}
         date={date}
-        onModalOpen={onModalOpen}
+        onCreateModalOpen={onCreateModalOpen}
       />
       <Setting />
     </div>

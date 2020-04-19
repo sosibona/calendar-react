@@ -1,10 +1,10 @@
 import React from "react";
 import ShowMonth from "./ShowMonth";
 
-const ControlPanelUser = ({ nextWeek, prevWeek, onToday, date, onModalOpen}) => {
+const ControlPanelUser = ({ nextWeek, prevWeek, onToday, date, onCreateModalOpen}) => {
   return (
     <>
-      <button className="button header__create" onClick={onModalOpen}>
+      <button className="button header__create" onClick={onCreateModalOpen}>
         <svg width="36" height="36" viewBox="0 0 36 36">
           <path fill="#34A853" d="M16 16v14h4V20z"></path>
           <path fill="#4285F4" d="M30 16H20l-4 4h14z"></path>
@@ -14,7 +14,7 @@ const ControlPanelUser = ({ nextWeek, prevWeek, onToday, date, onModalOpen}) => 
         </svg>
         Create
       </button>
-      <button className="button header__today" onClick={onToday}>Today</button>
+      <button className="button header__today" onClick={() => onToday(date)}>Today</button>
       <button className="change-week-btn" onClick={prevWeek}>
         <i className="header__angle fas fa-angle-left angle-left"></i>
       </button>

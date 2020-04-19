@@ -16,7 +16,6 @@ const RenderDate = ({ date }) => {
 
   const dateList = days.map((day) => {
     const today = new Date(moment(new Date()).format("L")).getTime();
-    console.log(day);
     return (
       <span
         key={day}

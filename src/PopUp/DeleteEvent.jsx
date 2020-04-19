@@ -2,7 +2,7 @@ import React from "react";
 
 const DeleteEvent = ({ isDeleteOpen, eventForDelete, closeDeleteModal, deleteEvent }) => {
   if (!isDeleteOpen) return null;
-  const { name, eventDate, eventColor, additionalInfo, id } = eventForDelete;
+  const { name, eventDate, additionalInfo, id } = eventForDelete;
   return (
     <div className="modal-delete">
       <button className="modal-delete__icon-close" onClick={closeDeleteModal}>

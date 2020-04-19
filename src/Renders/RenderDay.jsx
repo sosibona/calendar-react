@@ -1,15 +1,19 @@
 import React from "react";
 import generateNumbers from "../generateNumbers";
 import RenderEvent from "./RenderEvent";
+import RealTimeLine from "./RealTimeLine";
+import moment from 'moment'
 
 const RenderDay = ({
   dayOfWeek,
-  onModalOpen,
-  day,
   event,
+  day,
   onDeleteModalOpen,
+  onСellModalOpen
 }) => {
-  const hours = generateNumbers(1, 24).map((hour) => {
+  const dateToday = moment(new Date()).format("YYYY-MM-DD");
+  const isToday = day === +moment(dateToday).format('x');
+  const hours = generateNumbers(0, 23).map((hour) => {
     const evenInThisTime = event.filter((e) => {
       const convertStartTime = e.eventTime[0].split(":");
       const startTime = +convertStartTime[0];
@@ -20,7 +24,7 @@ const RenderDay = ({
         key={hour}
         className="row-hour"
         data-hour={hour}
-        onClick={() => onModalOpen(day, hour)}
+        onClick={() => onСellModalOpen(day, hour)}
       >
         {evenInThisTime.length > 0 && (
           <RenderEvent
@@ -34,6 +38,7 @@ const RenderDay = ({
   return (
     <div className="day-by-hours" data-date-of-day={dayOfWeek}>
       {hours}
+      {isToday && <RealTimeLine />}
     </div>
   );
 };

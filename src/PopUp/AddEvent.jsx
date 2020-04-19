@@ -2,21 +2,66 @@ import React from "react";
 import { Component } from "react";
 
 class AddEvent extends Component {
-  // state = {
-  //   name: "",
-  //   eventDate: "2020-04-14",
-  //   eventTime: [],
-  //   additionalInfo: "",
+  // constructor(props) {
+  //   super(props);
+
+  //   const eventStartTime = `${(new Date().getHours() + 1)
+  //     .toString()
+  //     .padStart(2, "0")}:00`;
+  //   const eventFinishTime = `${(new Date().getHours() + 2)
+  //     .toString()
+  //     .padStart(2, "0")}:00`;
+
+  //   this.state = {
+  //     name: "",
+  //     eventDate: moment(new Date()).format('YYYY-MM-DD'),
+  //     eventTime: [eventStartTime, eventFinishTime],
+  //     eventColor: "#47d6dc",
+  //     additionalInfo: "",
+  //   };
+  // }
+
+  // handleChange = (event) => {
+  //   const { name, value } = event.target;
+  //   if (name === "startEvent") {
+  //     const start = value;
+  //     this.state.eventTime.splice(0, 1, start);
+  //     this.setState({
+  //       eventTime: this.state.eventTime,
+  //     });
+  //     return;
+  //   } else if (name === "endEvent") {
+  //     const finish = value;
+  //     this.state.eventTime.splice(1, 1, finish);
+  //     this.setState({
+  //       eventTime: this.state.eventTime,
+  //     });
+  //     return;
+  //   }
+  //   this.setState({
+  //     [name]: value,
+  //   });
   // };
+
+  onSubmit = (event) => {
+    event.preventDefault();
+    this.props.createEvent();
+  };
+
   render() {
+    // const { name, eventDate, eventTime, eventColor } = this.state;
+    // const ({  }) = this.props;
     const {
       isModalOpen,
       onModalClose,
-      name,
       eventDate,
       eventTime,
+      additionalInfo,
+      name,
+      eventColor,
       handleChange,
     } = this.props;
+
     if (!isModalOpen) return null;
     return (
       <div className="modal-form">
@@ -24,11 +69,10 @@ class AddEvent extends Component {
           <i className="far fa-times-circle"></i>
         </button>
         <span className="modal-form__error"></span>
-        <form className="create-event">
+        <form className="create-event" onSubmit={this.onSubmit}>
           <input
             type="text"
             name="name"
-            id="name"
             className="create-event__name"
             placeholder="Event"
             value={name}
@@ -40,10 +84,7 @@ class AddEvent extends Component {
             <input
               className="calendar-data"
               type="date"
-              id="date"
               name="eventDate"
-              min="2020-02-20"
-              max="2040-12-31"
               required
               value={eventDate}
               onChange={handleChange}
@@ -51,10 +92,7 @@ class AddEvent extends Component {
             <input
               className="startTime"
               type="time"
-              id="startTime"
               name="startEvent"
-              min="00:00"
-              max="24:00"
               step="900"
               required
               value={eventTime[0]}
@@ -63,10 +101,7 @@ class AddEvent extends Component {
             <input
               className="endTime"
               type="time"
-              id="endTime"
               name="endEvent"
-              min="00:00"
-              max="24:00"
               step="900"
               required
               value={eventTime[1]}
@@ -77,18 +112,23 @@ class AddEvent extends Component {
             <i className="create-event__additional-info-icon fas fa-stream"></i>
             <textarea
               className="create-event__additional-info-text"
-              name="description"
-              id="info"
+              name="additionalInfo"
               cols="30"
               rows="5"
               placeholder="Additional informations"
+              onChange={handleChange}
+              value={additionalInfo}
             ></textarea>
           </div>
           <div className="create-event__additional">
-            <input type="color" id="event" name="eventColor" />
-            {/* value="#47d6dc" */}
+            <input
+              type="color"
+              name="eventColor"
+              value={eventColor}
+              onChange={handleChange}
+            />
             <button className="create-event__button" type="submit">
-              Save
+              Create
             </button>
           </div>
         </form>

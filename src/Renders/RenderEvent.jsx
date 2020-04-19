@@ -6,6 +6,7 @@ const RenderEvent = ({ events, onDeleteModalOpen }) => {
     const style = styleForEvent(meet);
     return (
       <div
+        key={meet.id}
         data-id="11"
         className="event"
         style={style}
@@ -15,7 +16,7 @@ const RenderEvent = ({ events, onDeleteModalOpen }) => {
           {meet.eventTime[0]} - {meet.eventTime[1]}
         </span>
         <span>{meet.name}</span>
-    <span className="event__description">{meet.additionalInfo}</span>
+        <span className="event__description">{meet.additionalInfo}</span>
       </div>
     );
   });

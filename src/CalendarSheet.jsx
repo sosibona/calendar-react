@@ -40,13 +40,13 @@ class CalendarSheet extends Component {
   //   ],
   // };
   render() {
-    const { date, onModalOpen, onDeleteModalOpen, events } = this.props;
+    const { date, onDeleteModalOpen, events, onСellModalOpen } = this.props;
     return (
       <main className="days">
         <TimeTrack />
         <RenderWeek
           date={date}
-          onModalOpen={onModalOpen}
+          onСellModalOpen={onСellModalOpen}
           events={events}
           onDeleteModalOpen={onDeleteModalOpen}
         />
