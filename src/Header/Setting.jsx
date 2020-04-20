@@ -9,17 +9,14 @@ const Setting = () => {
       <div className="header__setting switch-setting">
         <div>
           <input type="color" id="window" name="window"  />
-          {/* value="#ffffff" */}
           <label htmlFor="window">Main Window </label>
         </div>
         <div>
           <input type="color" id="header" name="header" />
-          {/* value="#ffffff" */}
           <label htmlFor="header">Header</label>
         </div>
         <div>
           <input type="color" id="event" name="event"  />
-          {/* value="#47d6dc" */}
           <label htmlFor="event">Events</label>
         </div>
         <div>
@@ -27,7 +24,6 @@ const Setting = () => {
             type="color"
             id="borderEvent"
             name="borderEvent"
-            // value="#0000ff"
           />
           <label htmlFor="borderEvent">Border Events</label>
         </div>
@@ -36,7 +32,6 @@ const Setting = () => {
             type="color"
             id="textEvents"
             name="textEvents"
-            // value="#000000"
           />
           <label htmlFor="textEvents">Text Events</label>
         </div>

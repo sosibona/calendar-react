@@ -2,55 +2,12 @@ import React from "react";
 import { Component } from "react";
 
 class AddEvent extends Component {
-  // constructor(props) {
-  //   super(props);
-
-  //   const eventStartTime = `${(new Date().getHours() + 1)
-  //     .toString()
-  //     .padStart(2, "0")}:00`;
-  //   const eventFinishTime = `${(new Date().getHours() + 2)
-  //     .toString()
-  //     .padStart(2, "0")}:00`;
-
-  //   this.state = {
-  //     name: "",
-  //     eventDate: moment(new Date()).format('YYYY-MM-DD'),
-  //     eventTime: [eventStartTime, eventFinishTime],
-  //     eventColor: "#47d6dc",
-  //     additionalInfo: "",
-  //   };
-  // }
-
-  // handleChange = (event) => {
-  //   const { name, value } = event.target;
-  //   if (name === "startEvent") {
-  //     const start = value;
-  //     this.state.eventTime.splice(0, 1, start);
-  //     this.setState({
-  //       eventTime: this.state.eventTime,
-  //     });
-  //     return;
-  //   } else if (name === "endEvent") {
-  //     const finish = value;
-  //     this.state.eventTime.splice(1, 1, finish);
-  //     this.setState({
-  //       eventTime: this.state.eventTime,
-  //     });
-  //     return;
-  //   }
-  //   this.setState({
-  //     [name]: value,
-  //   });
-  // };
-
   onSubmit = (event) => {
     event.preventDefault();
     this.props.createEvent();
   };
 
   render() {
-    // const { name, eventDate, eventTime, eventColor } = this.state;
-    // const ({  }) = this.props;
     const {
       isModalOpen,
       onModalClose,

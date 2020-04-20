@@ -23,17 +23,6 @@ const DeleteEvent = ({ isDeleteOpen, eventForDelete, closeDeleteModal, deleteEve
         </span>
       </div>
       <button className="modal-delete__btn-delete-event" onClick={() => deleteEvent(id)}>Delete Event</button>
-      {/* <div className="change-color">
-        <input
-          type="color"
-          id="eventColor"
-          name="eventColor"
-          value={eventColor}
-        />
-        <button className="header-btn modal-delete__btn-change-color">
-          Change color
-        </button>
-      </div> */}
     </div>
   );
 };
