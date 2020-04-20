@@ -1,7 +1,7 @@
 import React from "react";
 import generateNumbers from "../generateNumbers";
-import RenderEvent from "./RenderEvent";
-import RealTimeLine from "./RealTimeLine";
+import RenderEvent from "../Renders/RenderEvent";
+import RealTimeLine from "../RealTimeLine/RealTimeLine";
 import moment from 'moment'
 
 const RenderDay = ({

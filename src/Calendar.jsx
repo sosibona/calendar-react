@@ -1,10 +1,9 @@
 import React, { Component } from "react";
-import DeleteEvent from "./PopUp/DeleteEvent";
-import AddEvent from "./PopUp/AddEvent";
 import Header from "./Header/Header";
-import CalendarSheet from "./CalendarSheet";
+import CalendarSheet from "./CalendarSheet/CalendarSheet";
 import moment from "moment";
 import getMonday from "./getMonday";
+import PopUp from './PopUp/PopUp'
 import { fetchEventsList, deleteEvent, createEvent } from "./eventGateway";
 
 class Calendar extends Component {
@@ -139,9 +138,12 @@ class Calendar extends Component {
 
   onСellModalOpen = (day, hour) => {
     const todayHour = new Date().getHours();
-    const todayTimestamp = new Date(moment(new Date()).format("MM-DD-YYYY")).getTime();
+    const todayTimestamp = new Date(
+      moment(new Date()).format("MM-DD-YYYY")
+    ).getTime();
 
-    if (todayTimestamp > day || (todayTimestamp === day && todayHour >= hour)) return;
+    if (todayTimestamp > day || (todayTimestamp === day && todayHour >= hour))
+      return;
 
     const eventStartTime = `${hour.toString().padStart(2, "0")}:00`;
     const eventFinishTime = `${(hour + 1).toString().padStart(2, "0")}:00`;
@@ -161,24 +163,21 @@ class Calendar extends Component {
   }
 
   fetchEvents = () => {
-    fetchEventsList()
-      .then((events) =>
-        this.setState({
-          events: events,
-        })
-      );
+    fetchEventsList().then((events) =>
+      this.setState({
+        events: events,
+      })
+    );
   };
 
   render() {
     return (
       <div className="calendar">
-        <DeleteEvent
+        <PopUp
           isDeleteOpen={this.state.isDeleteOpen}
           eventForDelete={this.state.eventForDelete}
           closeDeleteModal={this.closeDeleteModal}
           deleteEvent={this.deleteEvent}
-        />
-        <AddEvent
           isModalOpen={this.state.isModalOpen}
           onModalClose={this.onModalClose}
           name={this.state.name}

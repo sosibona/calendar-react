@@ -1,5 +1,6 @@
 import React from "react";
 import { Component } from "react";
+import './redLine.scss';
 
 class RealTimeLine extends Component {
   constructor(props) {

@@ -1,5 +1,6 @@
 import React from "react";
-import styleForEvent from "../styleForEvent";
+import styleForEvent from "./styleForEvent";
+import './event.scss';
 
 const RenderEvent = ({ events, onDeleteModalOpen }) => {
   const eventsList = events.map((meet) => {

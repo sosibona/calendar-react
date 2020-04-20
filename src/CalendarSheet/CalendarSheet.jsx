@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import TimeTrack from "./Renders/TimeTrack";
-import RenderWeek from "./Renders/RenderWeek";
+import TimeTrack from "./TimeTrack";
+import RenderWeek from "./RenderWeek";
+import './calendarSheet.scss';
 
 class CalendarSheet extends Component {
   // state = {

@@ -1,7 +1,7 @@
 import React from "react";
-import RenderDaysOfWeek from '../Renders/RenderDaysOfWeek'
-import GreenwichZone from "../GreenwichZone";
-import RenderDate from "../Renders/RenderDate";
+import RenderDaysOfWeek from './RenderDaysOfWeek'
+import GreenwichZone from "./GreenwichZone";
+import RenderDate from "../CalendarSheet/RenderDate";
 
 const Navigation = ({date}) => {
   

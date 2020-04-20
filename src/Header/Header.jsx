@@ -1,6 +1,7 @@
 import React from "react";
 import UserPanel from "./UserPanel";
 import Navigation from "./Navigation";
+import './header.scss';
 
 const Header = ({ date, nextWeek, prevWeek, onToday, onCreateModalOpen }) => {
   return (
