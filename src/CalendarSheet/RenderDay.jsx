@@ -22,7 +22,6 @@ const RenderDay = ({
       <div
         key={hour}
         className="row-hour"
-        data-hour={hour}
         onClick={() => onСellModalOpen(day, hour)}
       >
         {evenInThisTime.length > 0 && (
