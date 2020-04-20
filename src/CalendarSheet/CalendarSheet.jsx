@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import TimeTrack from "./TimeTrack";
 import RenderWeek from "./RenderWeek";
 import './calendarSheet.scss';
 
-class CalendarSheet extends Component {
+class CalendarSheet extends PureComponent {
   render() {
     const { date, onDeleteModalOpen, events, onСellModalOpen } = this.props;
     return (
