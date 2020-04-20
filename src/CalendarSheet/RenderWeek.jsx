@@ -1,6 +1,6 @@
 import React from "react";
 import RenderDay from "./RenderDay";
-import generateWeek from "../generateWeek";
+import generateWeek from "./generateWeek";
 
 const RenderWeek = ({ date, events, onDeleteModalOpen, onСellModalOpen }) => {
   const week = generateWeek(date);

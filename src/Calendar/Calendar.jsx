@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import Header from "./Header/Header";
-import CalendarSheet from "./CalendarSheet/CalendarSheet";
+import Header from "../Header/Header";
+import CalendarSheet from "../CalendarSheet/CalendarSheet";
 import moment from "moment";
-import getMonday from "./getMonday";
-import PopUp from './PopUp/PopUp'
+import getMonday from "../CalendarSheet/getMonday";
+import PopUp from '../PopUp/PopUp'
 import { fetchEventsList, deleteEvent, createEvent } from "./eventGateway";
 
 class Calendar extends Component {

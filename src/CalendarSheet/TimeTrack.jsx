@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import generateNumbers from "../generateNumbers";
+import generateNumbers from "./generateNumbers";
 
 class TimeTrack extends PureComponent {
   render() {

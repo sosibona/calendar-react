@@ -1,5 +1,5 @@
 import React from "react";
-import generateWeek from "../generateWeek";
+import generateWeek from "../CalendarSheet/generateWeek";
 import moment from "moment";
 
 const ShowMonth = ({ date }) => {

@@ -1,5 +1,5 @@
 import React from "react";
-import generateNumbers from "../generateNumbers";
+import generateNumbers from "./generateNumbers";
 
 const RenderHours = () => {
   const hours = generateNumbers(1, 24).map((hour) => {

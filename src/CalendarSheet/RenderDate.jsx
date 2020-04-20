@@ -1,7 +1,7 @@
 import React from "react";
 import moment from "moment";
-import getMonday from "../getMonday";
-import generateNumbers from "../generateNumbers";
+import getMonday from "./getMonday";
+import generateNumbers from "./generateNumbers";
 
 const RenderDate = ({ date }) => {
   const oneDay = 86400000;

@@ -1,5 +1,5 @@
 import React from "react";
-import generateNumbers from "../generateNumbers";
+import generateNumbers from "./generateNumbers";
 import RenderEvent from "../Renders/RenderEvent";
 import RealTimeLine from "../RealTimeLine/RealTimeLine";
 import moment from 'moment'
