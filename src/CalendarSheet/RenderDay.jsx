@@ -5,7 +5,6 @@ import RealTimeLine from "../RealTimeLine/RealTimeLine";
 import moment from 'moment'
 
 const RenderDay = ({
-  dayOfWeek,
   event,
   day,
   onDeleteModalOpen,
@@ -36,7 +35,7 @@ const RenderDay = ({
     );
   });
   return (
-    <div className="day-by-hours" data-date-of-day={dayOfWeek}>
+    <div className="day-by-hours">
       {hours}
       {isToday && <RealTimeLine />}
     </div>

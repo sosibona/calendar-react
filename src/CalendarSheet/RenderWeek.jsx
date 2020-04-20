@@ -11,7 +11,6 @@ const RenderWeek = ({ date, events, onDeleteModalOpen, onСellModalOpen }) => {
     return (
       <RenderDay
         key={day}
-        dayOfWeek={day}
         onСellModalOpen={onСellModalOpen}
         day={day}
         event={eventForThisDay}
