@@ -1,6 +1,6 @@
 import React from "react";
 import generateNumbers from "./generateNumbers";
-import RenderEvent from "../Event/Event";
+import Event from "../Event/Event";
 import RealTimeLine from "../RealTimeLine/RealTimeLine";
 import moment from 'moment'
 
@@ -25,7 +25,7 @@ const DayByHours = ({
         onClick={() => onСellModalOpen(day, hour)}
       >
         {evenInThisTime.length > 0 && (
-          <RenderEvent
+          <Event
             events={evenInThisTime}
             onDeleteModalOpen={onDeleteModalOpen}
           />
