@@ -2,7 +2,7 @@ import React from "react";
 import styleForEvent from "./styleForEvent";
 import './event.scss';
 
-const RenderEvent = ({ events, onDeleteModalOpen }) => {
+const Event = ({ events, onDeleteModalOpen }) => {
   const eventsList = events.map((meet) => {
     const style = styleForEvent(meet);
     return (
@@ -24,4 +24,4 @@ const RenderEvent = ({ events, onDeleteModalOpen }) => {
   return <>{eventsList}</>;
 };
 
-export default RenderEvent;
+export default Event;

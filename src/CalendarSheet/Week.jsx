@@ -1,15 +1,15 @@
 import React from "react";
-import RenderDay from "./RenderDay";
+import DayByHours from "./DayByHours";
 import generateWeek from "./generateWeek";
 
-const RenderWeek = ({ date, events, onDeleteModalOpen, onСellModalOpen }) => {
+const Week = ({ date, events, onDeleteModalOpen, onСellModalOpen }) => {
   const week = generateWeek(date);
   const weekList = week.map((day) => {
     const eventForThisDay = events.filter((event) => {
       return day === new Date(event.eventDate).getTime();
     });
     return (
-      <RenderDay
+      <DayByHours
         key={day}
         onСellModalOpen={onСellModalOpen}
         day={day}
@@ -22,4 +22,4 @@ const RenderWeek = ({ date, events, onDeleteModalOpen, onСellModalOpen }) => {
   return <section className="current-week">{weekList}</section>;
 };
 
-export default RenderWeek;
+export default Week;

@@ -1,10 +1,10 @@
 import React from "react";
 import generateNumbers from "./generateNumbers";
-import RenderEvent from "../Renders/RenderEvent";
+import RenderEvent from "../Event/Event";
 import RealTimeLine from "../RealTimeLine/RealTimeLine";
 import moment from 'moment'
 
-const RenderDay = ({
+const DayByHours = ({
   event,
   day,
   onDeleteModalOpen,
@@ -41,4 +41,4 @@ const RenderDay = ({
   );
 };
 
-export default RenderDay;
+export default DayByHours;

@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react";
 import TimeTrack from "./TimeTrack";
-import RenderWeek from "./RenderWeek";
+import Week from "./Week";
 import './calendarSheet.scss';
 
 class CalendarSheet extends PureComponent {
@@ -9,7 +9,7 @@ class CalendarSheet extends PureComponent {
     return (
       <main className="days">
         <TimeTrack />
-        <RenderWeek
+        <Week
           date={date}
           onСellModalOpen={onСellModalOpen}
           events={events}

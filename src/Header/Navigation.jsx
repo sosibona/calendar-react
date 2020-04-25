@@ -1,13 +1,13 @@
 import React from "react";
-import RenderDaysOfWeek from './RenderDaysOfWeek'
+import DaysOfWeek from './DaysOfWeek'
 import GreenwichZone from "./GreenwichZone";
-import RenderDate from "../CalendarSheet/RenderDate";
+import RenderDate from "../CalendarSheet/DateOfMonth";
 
 const Navigation = ({date}) => {
   
   return (
     <nav className="navigation">
-      <RenderDaysOfWeek />
+      <DaysOfWeek />
       <RenderDate date={date}/>
       <GreenwichZone />
     </nav>

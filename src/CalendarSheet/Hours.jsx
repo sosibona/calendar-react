@@ -1,11 +1,11 @@
 import React from "react";
 import generateNumbers from "./generateNumbers";
 
-const RenderHours = () => {
+const Hours = () => {
   const hours = generateNumbers(1, 24).map((hour) => {
-    return <div className="row-hour"></div>;
+    return <div className="row-hour" />
   });
   return { hours };
 };
 
-export default RenderHours;
+export default Hours;

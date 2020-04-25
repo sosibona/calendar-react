@@ -3,7 +3,7 @@ import moment from "moment";
 import getMonday from "./getMonday";
 import generateNumbers from "./generateNumbers";
 
-const RenderDate = ({ date }) => {
+const DateOfMonth = ({ date }) => {
   const oneDay = 86400000;
   const mondayDate = getMonday(date);
   const currentDateTimestamp = new Date(
@@ -32,4 +32,4 @@ const RenderDate = ({ date }) => {
   return <div className="date-of-month">{dateList}</div>;
 };
 
-export default RenderDate;
+export default DateOfMonth;

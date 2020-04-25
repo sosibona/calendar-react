@@ -1,14 +1,15 @@
 import React from "react";
 import { PureComponent } from "react";
 
+const formatter = new Intl.DateTimeFormat("en", {
+  timeZone: "UTC",
+  hour: "2-digit",
+  minute: "2-digit",
+  hour12: false,
+});
+
 class GreenwichZone extends PureComponent {
   render() {
-    const formatter = new Intl.DateTimeFormat("en", {
-      timeZone: "UTC",
-      hour: "2-digit",
-      minute: "2-digit",
-      hour12: false,
-    });
     const [formatterHour] = formatter.format(new Date()).split(":");
     const timeDifference = (new Date().getHours() - +formatterHour).toString();
     const greenwichTime = `GMT +${

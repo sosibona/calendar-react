@@ -10,16 +10,6 @@ export const fetchEventsList = () => {
     .then(eventsList => eventsList)
 }
 
-// export const fetchEvents = () => {
-//   return fetch(baseUrl)
-//     .then((response) => response.json())
-//     .then((events) =>
-//       this.setState({
-//         events: events,
-//       })
-//     );
-// };
-
 export const deleteEvent = (id) => {
   return fetch(`${baseUrl}/${id}`, {
     method: 'DELETE'
