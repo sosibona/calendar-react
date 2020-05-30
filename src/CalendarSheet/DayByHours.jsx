@@ -14,6 +14,7 @@ const DayByHours = ({
   const isToday = day === +moment(dateToday).format('x');
   const hours = generateNumbers(0, 23).map((hour) => {
     const evenInThisTime = event.filter((e) => {
+      if (!e.eventTime[0]) return false;
       const convertStartTime = e.eventTime[0].split(":");
       const startTime = +convertStartTime[0];
       return startTime === hour;
